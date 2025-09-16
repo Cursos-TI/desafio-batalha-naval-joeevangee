@@ -12,6 +12,7 @@
 int main() {
     // Declaração da matriz 10x10 usando números literais
     char tabuleiro[10][10];
+    //.
     
     // Inicialização do tabuleiro com 'A' para água
     for (int i = 0; i < 10; i++) {
