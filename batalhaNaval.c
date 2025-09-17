@@ -11,8 +11,7 @@
 
 int main() {
     // Declaração da matriz 10x10 usando números literais
-    char tabuleiro[10][10];
-    //.
+    char tabuleiro[10][10];  
     
     // Inicialização do tabuleiro com 'A' para água
     for (int i = 0; i < 10; i++) {
@@ -20,6 +19,18 @@ int main() {
             tabuleiro[i][j] = '0';
         }
     }
+                
+    
+                         // essa seria uma outra maneira de fazer os navios horizontal e vertical 
+
+     // Posicionamento do navio horizontal (como você já fez)
+    //for (int j = 6; j <= 8; j++) {
+        //tabuleiro[5][j] = 'N';
+    //}
+
+    // Posicionamento do navio vertical (como você já fez)
+    //for (int i = 5; i <= 7; i++) {
+       // tabuleiro[i][0] = 'N';
 
     // POSICIONAR O NAVIO APÓS A INICIALIZAÇÃO
     tabuleiro [5][6] = 'N';
@@ -29,7 +40,22 @@ int main() {
     tabuleiro [5][0] = 'N';
     tabuleiro [6][0] = 'N';
     tabuleiro [7][0] = 'N';
-    
+
+    int tamanho_navio = 3;
+    int linha_inicial = 7;
+    int coluna_inicial = 5;
+
+    for (int i = 0; i < tamanho_navio; i++) {
+        tabuleiro[linha_inicial + i][coluna_inicial + i] = 'N';
+    }
+
+    int linha_inicialDE = 5;
+    int coluna_inicialDE = 0;
+
+    for (int i = 0; i < tamanho_navio; i++) {
+        tabuleiro[linha_inicialDE - i][coluna_inicialDE + i] = 'N';
+    }
+
     // Impressão das coordenadas das colunas (A B C...)
     printf("  ");
     for (int j = 0; j < 10; j++) {
@@ -39,7 +65,7 @@ int main() {
     
     // Impressão do tabuleiro com as coordenadas das linhas (0 1 2...)
     for (int i = 0; i < 10; i++) {
-        printf("%d ", i + 1); // Imprime o número da linha
+        printf("%d ", i ); // Imprime o número da linha
         for (int j = 0; j < 10; j++) {
             printf("%c ", tabuleiro[i][j]);
         }
